@@ -32,10 +32,23 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>Mac Developer</CodesignKey>
+	  <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="SimpleToolkit.Core" Version="2.0.2" />
 		<PackageReference Include="SimpleToolkit.SimpleShell" Version="2.0.0" />
+		<PackageReference Include="IdentityModel.OidcClient" Version="5.2.1" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -64,6 +77,12 @@
 	  <None Remove="Resources\Images\icon_pin.png" />
 	  <None Remove="Resources\Images\icon_folder.png" />
 	  <None Remove="Resources\Images\icon_chat.png" />
+	  <None Remove="Auth\" />
+	  <None Remove="DataStores\" />
+	  <None Remove="Models\" />
+	  <None Remove="Models\Locals\" />
+	  <None Remove="Models\Respones\" />
+	  <None Remove="Models\Respones\Tickets\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -106,5 +125,13 @@
 	  <MauiXaml Update="Views\Pages\RibbonPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Auth\" />
+	  <Folder Include="DataStores\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="Models\Locals\" />
+	  <Folder Include="Models\Respones\" />
+	  <Folder Include="Models\Respones\Tickets\" />
 	</ItemGroup>
 </Project>
