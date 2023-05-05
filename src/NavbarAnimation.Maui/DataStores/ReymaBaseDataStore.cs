@@ -1,7 +1,5 @@
-﻿using System;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 
-using Microsoft.Extensions.Http;
 using NavbarAnimation.Maui.Models;
 
 namespace NavbarAnimation.Maui.DataStores;
@@ -31,7 +29,7 @@ public abstract class ReymaBaseDataStore<TEntity, TResponse> : IReymaBaseDataSto
     /// 
     /// </summary>
     /// <returns></returns>
-    public async Task<PagedResponse<TResponse>> GetList() => await ProcessHttpRequest<PagedResponse<TResponse>>(ApiUrl);
+    public async Task<PagedResponse<TResponse>> GetList(int page = 1, int pageSize = 10) => await ProcessHttpRequest<PagedResponse<TResponse>>($"{ApiUrl}?Page={page}&PageSize={pageSize}");
 
     /// <summary>
     /// 

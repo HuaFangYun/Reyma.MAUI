@@ -1,6 +1,4 @@
-﻿using System;
-
-using NavbarAnimation.Maui.Models.Locals;
+﻿using NavbarAnimation.Maui.Models.Locals;
 using NavbarAnimation.Maui.Models.Respones.Tickets;
 
 namespace NavbarAnimation.Maui.DataStores;

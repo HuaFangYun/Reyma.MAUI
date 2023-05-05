@@ -13,16 +13,40 @@
                 HorizontalOptions="CenterAndExpand" />
             -->
 
-            <Button Text="API"
-                    Clicked="Button_Clicked_1"
-                    HorizontalOptions="Center" />            
-
             <Button Text="Login"
-                    Clicked="Button_Clicked"
+                    Command="{Binding LoginCommand}"
                     HorizontalOptions="Center" />
 
-            <Editor x:Name="editor"
-                    HeightRequest="350" />
+            <Button Text="Load Data"
+                    Command="{Binding InitialLoadCommand}"
+                    HorizontalOptions="Center" />
+            
+            <CollectionView ItemsSource="{Binding DataSource}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Numero}"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Telefono}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

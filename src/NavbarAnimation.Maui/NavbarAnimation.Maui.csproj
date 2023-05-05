@@ -43,7 +43,12 @@
 	  <CodesignKey>Mac Developer</CodesignKey>
 	  <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	  <CodesignKey>Apple Development: Hector Galicia (3K9W74SMU5)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="SimpleToolkit.Core" Version="2.0.2" />
 		<PackageReference Include="SimpleToolkit.SimpleShell" Version="2.0.0" />
 		<PackageReference Include="IdentityModel.OidcClient" Version="5.2.1" />
@@ -129,9 +134,7 @@
 	<ItemGroup>
 	  <Folder Include="Auth\" />
 	  <Folder Include="DataStores\" />
-	  <Folder Include="Models\" />
 	  <Folder Include="Models\Locals\" />
-	  <Folder Include="Models\Respones\" />
 	  <Folder Include="Models\Respones\Tickets\" />
 	</ItemGroup>
 </Project>

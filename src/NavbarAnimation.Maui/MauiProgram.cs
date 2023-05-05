@@ -2,6 +2,7 @@
 
 using NavbarAnimation.Maui.Auth;
 using NavbarAnimation.Maui.DataStores;
+using NavbarAnimation.Maui.ViewModels.Pages;
 using NavbarAnimation.Maui.Views.Pages;
 
 using SimpleToolkit.Core;
@@ -58,7 +59,10 @@ namespace NavbarAnimation.Maui
 
             // DataStores
             builder.Services.AddScoped(typeof(TicketDataStore));
-            
+
+            // ViewModels
+            builder.Services.AddScoped(typeof(RibbonViewModel));
+
             return builder.Build();
         }
     }
